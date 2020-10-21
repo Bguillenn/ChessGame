@@ -1,0 +1,4 @@
+/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/CMakeFiles/ChessGame.dir
+/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/CMakeFiles/ChessGame_autogen.dir
