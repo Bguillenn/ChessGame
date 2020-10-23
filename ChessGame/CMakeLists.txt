@@ -45,6 +45,8 @@ else()
     Pieza.cpp
     Pieza.h
     Resource.qrc
+    Reina.cpp
+    Reina.h
   )
 endif()
 

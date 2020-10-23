@@ -129,6 +129,12 @@
 		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/Pieza.h">
 			<Option target="ChessGame"/>
 		</Unit>
+		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/Reina.cpp">
+			<Option target="ChessGame"/>
+		</Unit>
+		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/Reina.h">
+			<Option target="ChessGame"/>
+		</Unit>
 		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/Resource.qrc">
 			<Option target="ChessGame"/>
 		</Unit>

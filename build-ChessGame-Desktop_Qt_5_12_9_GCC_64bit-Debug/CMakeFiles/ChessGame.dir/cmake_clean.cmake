@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ChessGame.dir/ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.o"
   "CMakeFiles/ChessGame.dir/ChessGame_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/ChessGame.dir/Pieza.cpp.o"
+  "CMakeFiles/ChessGame.dir/Reina.cpp.o"
   "CMakeFiles/ChessGame.dir/main.cpp.o"
   "CMakeFiles/ChessGame.dir/mainwindow.cpp.o"
   "ChessGame"

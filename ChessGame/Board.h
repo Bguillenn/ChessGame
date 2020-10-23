@@ -3,8 +3,14 @@
 
 #include <QWidget>
 #include <QPainter>
+#include <iostream>
+#include <QMouseEvent>
+#include <QMimeData>
+#include <QDrag>
+#include <QDropEvent>
 
 #include "Pieza.h"
+#include "Reina.h"
 
 #include <memory> //para utlilizar punteros inteligentes
 
@@ -19,13 +25,18 @@ class Board : public QWidget
 public:
     explicit Board(QWidget *parent = nullptr);
     ~Board();
-    void paintEvent(QPaintEvent * event) override; //sobreescribir este metodo
+    void paintEvent(QPaintEvent *event) override; //sobreescribir este metodo
+
+    void mousePressEvent(QMouseEvent *event) override;
+    void dragEnterEvent(QDragEnterEvent *event) override;//Verificar si todo está bien
+    void dragMoveEvent(QDragMoveEvent *event) override;//Verificar que no se haya perdido informacion
+    void dropEvent(QDropEvent *event) override;
 
 private:
     Ui::Board *ui;
     QPixmap BoardIcon;
 
-    std::unique_ptr<Pieza> pieza; //Utilizamos estos punteros porque vamos a utilizar polimorfismo
+    std::unique_ptr<Pieza> reina; //Utilizamos estos punteros porque vamos a utilizar polimorfismo
 };
 
 #endif // BOARD_H

@@ -244,6 +244,33 @@ Pieza.cpp.s:
 	$(MAKE) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/Pieza.cpp.s
 .PHONY : Pieza.cpp.s
 
+Reina.o: Reina.cpp.o
+
+.PHONY : Reina.o
+
+# target to build an object file
+Reina.cpp.o:
+	$(MAKE) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/Reina.cpp.o
+.PHONY : Reina.cpp.o
+
+Reina.i: Reina.cpp.i
+
+.PHONY : Reina.i
+
+# target to preprocess a source file
+Reina.cpp.i:
+	$(MAKE) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/Reina.cpp.i
+.PHONY : Reina.cpp.i
+
+Reina.s: Reina.cpp.s
+
+.PHONY : Reina.s
+
+# target to generate assembly for a file
+Reina.cpp.s:
+	$(MAKE) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/Reina.cpp.s
+.PHONY : Reina.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -320,6 +347,9 @@ help:
 	@echo "... Pieza.o"
 	@echo "... Pieza.i"
 	@echo "... Pieza.s"
+	@echo "... Reina.o"
+	@echo "... Reina.i"
+	@echo "... Reina.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

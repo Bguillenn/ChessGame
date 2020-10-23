@@ -14,9 +14,10 @@ class Pieza : public QLabel
 Q_OBJECT
 
 public:
+    //Pieza();
     explicit Pieza(QWidget *parent = nullptr);
-    Pieza();
-    //mover
+    virtual ~Pieza(){};
+    virtual void MoverPieza() = 0;
 
 
 protected:
