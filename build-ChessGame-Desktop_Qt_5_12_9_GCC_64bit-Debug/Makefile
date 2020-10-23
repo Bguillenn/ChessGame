@@ -163,6 +163,33 @@ Board.cpp.s:
 	$(MAKE) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/Board.cpp.s
 .PHONY : Board.cpp.s
 
+ChessGame_autogen/EWIEGA46WW/qrc_Resource.o: ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.o
+
+.PHONY : ChessGame_autogen/EWIEGA46WW/qrc_Resource.o
+
+# target to build an object file
+ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.o:
+	$(MAKE) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.o
+.PHONY : ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.o
+
+ChessGame_autogen/EWIEGA46WW/qrc_Resource.i: ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.i
+
+.PHONY : ChessGame_autogen/EWIEGA46WW/qrc_Resource.i
+
+# target to preprocess a source file
+ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.i:
+	$(MAKE) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.i
+.PHONY : ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.i
+
+ChessGame_autogen/EWIEGA46WW/qrc_Resource.s: ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.s
+
+.PHONY : ChessGame_autogen/EWIEGA46WW/qrc_Resource.s
+
+# target to generate assembly for a file
+ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.s:
+	$(MAKE) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.s
+.PHONY : ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.s
+
 ChessGame_autogen/mocs_compilation.o: ChessGame_autogen/mocs_compilation.cpp.o
 
 .PHONY : ChessGame_autogen/mocs_compilation.o
@@ -189,6 +216,33 @@ ChessGame_autogen/mocs_compilation.s: ChessGame_autogen/mocs_compilation.cpp.s
 ChessGame_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/ChessGame_autogen/mocs_compilation.cpp.s
 .PHONY : ChessGame_autogen/mocs_compilation.cpp.s
+
+Pieza.o: Pieza.cpp.o
+
+.PHONY : Pieza.o
+
+# target to build an object file
+Pieza.cpp.o:
+	$(MAKE) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/Pieza.cpp.o
+.PHONY : Pieza.cpp.o
+
+Pieza.i: Pieza.cpp.i
+
+.PHONY : Pieza.i
+
+# target to preprocess a source file
+Pieza.cpp.i:
+	$(MAKE) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/Pieza.cpp.i
+.PHONY : Pieza.cpp.i
+
+Pieza.s: Pieza.cpp.s
+
+.PHONY : Pieza.s
+
+# target to generate assembly for a file
+Pieza.cpp.s:
+	$(MAKE) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/Pieza.cpp.s
+.PHONY : Pieza.cpp.s
 
 main.o: main.cpp.o
 
@@ -257,9 +311,15 @@ help:
 	@echo "... Board.o"
 	@echo "... Board.i"
 	@echo "... Board.s"
+	@echo "... ChessGame_autogen/EWIEGA46WW/qrc_Resource.o"
+	@echo "... ChessGame_autogen/EWIEGA46WW/qrc_Resource.i"
+	@echo "... ChessGame_autogen/EWIEGA46WW/qrc_Resource.s"
 	@echo "... ChessGame_autogen/mocs_compilation.o"
 	@echo "... ChessGame_autogen/mocs_compilation.i"
 	@echo "... ChessGame_autogen/mocs_compilation.s"
+	@echo "... Pieza.o"
+	@echo "... Pieza.i"
+	@echo "... Pieza.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

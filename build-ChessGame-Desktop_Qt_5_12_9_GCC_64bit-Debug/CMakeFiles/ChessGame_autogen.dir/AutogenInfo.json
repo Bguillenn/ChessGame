@@ -13,6 +13,11 @@
 			"EWIEGA46WW/moc_Board.cpp"
 		],
 		[
+			"/home/denis/Workspace/ChessGame/ChessGame/Pieza.h",
+			"MU",
+			"EWIEGA46WW/moc_Pieza.cpp"
+		],
+		[
 			"/home/denis/Workspace/ChessGame/ChessGame/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp"
@@ -70,6 +75,7 @@
 	"SOURCES" : 
 	[
 		[ "/home/denis/Workspace/ChessGame/ChessGame/Board.cpp", "MU" ],
+		[ "/home/denis/Workspace/ChessGame/ChessGame/Pieza.cpp", "MU" ],
 		[ "/home/denis/Workspace/ChessGame/ChessGame/main.cpp", "MU" ],
 		[ "/home/denis/Workspace/ChessGame/ChessGame/mainwindow.cpp", "MU" ]
 	],

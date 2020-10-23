@@ -5,7 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/denis/Workspace/ChessGame/ChessGame/Board.cpp" "/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/CMakeFiles/ChessGame.dir/Board.cpp.o"
+  "/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp" "/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/CMakeFiles/ChessGame.dir/ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.o"
   "/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/ChessGame_autogen/mocs_compilation.cpp" "/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/CMakeFiles/ChessGame.dir/ChessGame_autogen/mocs_compilation.cpp.o"
+  "/home/denis/Workspace/ChessGame/ChessGame/Pieza.cpp" "/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/CMakeFiles/ChessGame.dir/Pieza.cpp.o"
   "/home/denis/Workspace/ChessGame/ChessGame/main.cpp" "/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/CMakeFiles/ChessGame.dir/main.cpp.o"
   "/home/denis/Workspace/ChessGame/ChessGame/mainwindow.cpp" "/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/CMakeFiles/ChessGame.dir/mainwindow.cpp.o"
   )

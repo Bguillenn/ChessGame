@@ -35,6 +35,9 @@ public:
     QLabel *label;
     QSpacerItem *verticalSpacer;
     QWidget *widget_5;
+    QHBoxLayout *horizontalLayout_4;
+    QWidget *widget_8;
+    QWidget *widget_9;
     Board *widget_3;
     QWidget *widget_2;
     QVBoxLayout *verticalLayout_2;
@@ -78,6 +81,19 @@ public:
 
         widget_5 = new QWidget(widget);
         widget_5->setObjectName(QString::fromUtf8("widget_5"));
+        widget_5->setMinimumSize(QSize(0, 240));
+        horizontalLayout_4 = new QHBoxLayout(widget_5);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        widget_8 = new QWidget(widget_5);
+        widget_8->setObjectName(QString::fromUtf8("widget_8"));
+
+        horizontalLayout_4->addWidget(widget_8);
+
+        widget_9 = new QWidget(widget_5);
+        widget_9->setObjectName(QString::fromUtf8("widget_9"));
+
+        horizontalLayout_4->addWidget(widget_9);
+
 
         verticalLayout->addWidget(widget_5);
 

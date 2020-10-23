@@ -123,6 +123,15 @@
 		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/Board.ui">
 			<Option target="ChessGame"/>
 		</Unit>
+		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/Pieza.cpp">
+			<Option target="ChessGame"/>
+		</Unit>
+		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/Pieza.h">
+			<Option target="ChessGame"/>
+		</Unit>
+		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/Resource.qrc">
+			<Option target="ChessGame"/>
+		</Unit>
 		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/main.cpp">
 			<Option target="ChessGame"/>
 		</Unit>
@@ -135,10 +144,19 @@
 		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/mainwindow.ui">
 			<Option target="ChessGame"/>
 		</Unit>
+		<Unit filename="/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp">
+			<Option target="ChessGame"/>
+		</Unit>
+		<Unit filename="/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp.rule">
+			<Option target="ChessGame"/>
+		</Unit>
 		<Unit filename="/home/denis/Workspace/ChessGame/build-ChessGame-Desktop_Qt_5_12_9_GCC_64bit-Debug/ChessGame_autogen/mocs_compilation.cpp">
 			<Option target="ChessGame"/>
 		</Unit>
 		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/Resource.qrc">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/home/denis/Workspace/ChessGame/ChessGame/../../../Qt5.12.9/5.12.9/gcc_64/lib/cmake/Qt5/Qt5Config.cmake">

@@ -58,6 +58,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/denis/Qt5.12.9/5.12.9/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake"
   "/home/denis/Qt5.12.9/5.12.9/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake"
   "/home/denis/Workspace/ChessGame/ChessGame/CMakeLists.txt"
+  "/home/denis/Workspace/ChessGame/ChessGame/Resource.qrc"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
@@ -93,6 +94,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/ChessGame_autogen.dir/AutogenInfo.json"
+  "CMakeFiles/ChessGame_autogen.dir/AutoRcc_Resource_EWIEGA46WW_Info.json"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
