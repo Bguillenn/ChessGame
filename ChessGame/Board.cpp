@@ -6,7 +6,15 @@ Board::Board(QWidget *parent) :
     ui(new Ui::Board)
 {
     ui->setupUi(this);
-    BoardIcon.load("/home/denis/Workspace/Chess/Icons/tablero-marron-notacion.png");
+    BoardIcon.load(":/resources/Icons/tablero-verde.png"); //Cargar el icono del tablero
+
+
+    pieza = std::make_unique<Pieza>(this);
+    pieza->move(0,0);
+    //pieza->setText("Peon");
+
+    pieza->show();
+
 }
 
 Board::~Board()
@@ -14,8 +22,8 @@ Board::~Board()
     delete ui;
 }
 
-void Board::paintEvent(QPaintEvent *)
+void Board::paintEvent(QPaintEvent *) //Para visualizar
 {
-    QPainter painter(this);
-    painter.drawPixmap(0,0,width(), width(), BoardIcon);
+    QPainter painter(this); //El que sabe pintar
+    painter.drawPixmap(0,0,360,360, BoardIcon); //Entregar a painter donde va a dibujar el tablero
 }

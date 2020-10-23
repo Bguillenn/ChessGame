@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>Icons/alfil-blanco.png</file>
+        <file>Icons/alfil-negro.png</file>
+        <file>Icons/caballo-blanco.png</file>
+        <file>Icons/caballo-negro.png</file>
+        <file>Icons/peon-blanco.png</file>
+        <file>Icons/peon-negro.png</file>
+        <file>Icons/reina-blanca.png</file>
+        <file>Icons/reina-negra.png</file>
+        <file>Icons/rey-blanco.png</file>
+        <file>Icons/rey-negro.png</file>
+        <file>Icons/tablero-marron.png</file>
+        <file>Icons/tablero-marron-notacion.png</file>
+        <file>Icons/tablero-negro.png</file>
+        <file>Icons/tablero-negro-notacion.png</file>
+        <file>Icons/tablero-verde.png</file>
+        <file>Icons/tablero-verde-notacion.png</file>
+        <file>Icons/torre-blanca.png</file>
+        <file>Icons/torre-negra.png</file>
+    </qresource>
+</RCC>
