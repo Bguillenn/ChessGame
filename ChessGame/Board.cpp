@@ -7,8 +7,7 @@ Board::Board(QWidget *parent) :
 {
     ui->setupUi(this);
     setAcceptDrops(true);//Aceptar drops
-    BoardIcon.load(":/resources/Icons/tablero-verde.png"); //Cargar el icono del tablero
-
+    BoardIcon.load(":/resources/Icons/ChessBoard.jpg"); //Cargar el icono del tablero
 
     reina = std::make_unique<Reina>(this);
     reina->move(0,0);
@@ -40,32 +39,32 @@ void Board::mousePressEvent(QMouseEvent *event)
     }
         std::cout<<"child\n";
 
-    QByteArray data;
-    QDataStream dataStream(&data, QIODevice::WriteOnly);
+    QByteArray data; //Mandar al SO
+    QDataStream dataStream(&data, QIODevice::WriteOnly);//Almacenar en data
     dataStream << QPoint(event->pos() - child->pos()); //Encapsular posicion desde se hizo clic
 
-    QMimeData *mimeData = new QMimeData();
-    mimeData->setData("application/x-dnditemdata", data);//Encapsulando lo que necesitamos para hacer el drag and drop
+    QMimeData *mimeData = new QMimeData(); //Manera de enviar datos
+    mimeData->setData("application/x-dnditemdata", data);//Encapsulando lo que necesitamos para hacer el drag and drop "standard"
 
-    QDrag * drag = new QDrag(this);
+    QDrag * drag = new QDrag(this);//Necesita donde va hacer la operacion de drag
     drag->setMimeData(mimeData); //Rescatar informacion al arrastrar el objeto
 
     drag->exec(Qt::CopyAction | Qt::MoveAction, Qt::CopyAction);//Ejecutar drag
 
 }
 
-void Board::dragMoveEvent(QDragMoveEvent *event)
+void Board::dragMoveEvent(QDragMoveEvent *event)//Casi nunca cambia
 {
     if(event->mimeData()->hasFormat("application/x-dnditemdata"))
     {
-        if(event->source() == this) //Verificar sis estamos en el tablero
+        if(event->source() == this) //Verificar si estamos en el tablero
         {
             event->setDropAction(Qt::MoveAction);
             event->accept();
         }
         else
         {
-            event->acceptProposedAction();
+            event->acceptProposedAction();//Acepta el evento pero lo anula proque esta fuera del tablero
         }
     }
     else
@@ -97,17 +96,17 @@ void Board::dragEnterEvent(QDragEnterEvent *event) //Verificar si estoy dentro d
 void Board::dropEvent(QDropEvent *event)
 {
     //mover la pieza, pero hay que controlar:
-    //si es que lo que recibono está érdido
-    if(event->mimeData()->hasFormat("application/x-dnditemdata"))
+    //si es que lo que recibono está pérdido
+    if(event->mimeData()->hasFormat("application/x-dnditemdata"))//Volver a verificar si tiene la misma cara
     {
-        QByteArray data = event->mimeData()->data("application/x-dnditemdata");//Posicion inicial
+        QByteArray data = event->mimeData()->data("application/x-dnditemdata");//Recibimos la Posicion inicial
         QDataStream dataStream(&data, QIODevice::ReadOnly);//Leer
 
         //Tener el punto desde donde vamos a ir
-        QPoint offset; //Se refiere al deslocamiento
-        dataStream >> offset;
+        QPoint offset; //Se refiere al deslocamiento o desplazamiento, nombre estandar offset
+        dataStream >> offset;//Leer de mi offset
 
-        //Hacia donde
+        //Hacia donde vamos a mover
         reina->move(event->pos() - offset);
 
         //Verificar que todo esta bien y aeptar las cosas

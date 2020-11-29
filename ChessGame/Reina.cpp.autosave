@@ -2,7 +2,7 @@
 
 Reina::Reina(QWidget *parent) : Pieza(parent)
 {
-    Icon.load(":/resources/Icons/reina-blanca.png");
+    Icon.load(":/resources/Icons/reina-negra.png");
     this->setPixmap(Icon.scaled(QSize(45,45), Qt::KeepAspectRatio));
 }
 

@@ -18,5 +18,6 @@
         <file>Icons/tablero-verde-notacion.png</file>
         <file>Icons/torre-blanca.png</file>
         <file>Icons/torre-negra.png</file>
+        <file>Icons/ChessBoard.jpg</file>
     </qresource>
 </RCC>
