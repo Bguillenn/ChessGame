@@ -13,7 +13,7 @@ class Piece : public QLabel
 {
     Q_OBJECT
 public:
-    explicit Piece(QWidget *parent = nullptr);
+    explicit Piece(QWidget *parent = nullptr, QString teamValue);
     virtual ~Piece(){};
     static const QString BLACK_TEAM;
     static const QString WHITE_TEAM;
