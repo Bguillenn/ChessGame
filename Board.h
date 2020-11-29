@@ -5,6 +5,12 @@
 #include <QPainter>
 #include <QVector>
 
+#include <QtWidgets>
+
+#include "Piece.h"
+
+#include <memory> //para utlilizar punteros inteligentes
+
 namespace Ui {
 class Board;
 }
@@ -23,8 +29,7 @@ private:
     Ui::Board *ui;
     QPixmap boardImage;
 
-
-
+    std::unique_ptr<Piece> piece;
 
 };
 
