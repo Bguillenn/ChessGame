@@ -27,7 +27,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
-file(GLOB files ".cpp" ".h" ".ui")
+file(GLOB files "*.cpp" "*.h" "*.ui")
 
 if(ANDROID)
   add_library(ChessGame SHARED
