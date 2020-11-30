@@ -1,5 +1,7 @@
 #include "Board.h"
 #include "ui_Board.h"
+#include "Knight.h"
+#include "Queen.h"
 
 Board::Board(QWidget *parent) :
     QWidget(parent),
@@ -8,10 +10,17 @@ Board::Board(QWidget *parent) :
     ui->setupUi(this);
     boardImage.load(":/Icons/Boards/ChessBoard.jpg");
 
-    piece = std::make_unique<Piece>(this);
-    piece->setText("Hola");
-    piece->move(0,0);
-    piece->show();
+    horse = std::make_unique<Knight>(this, Piece::BLACK_TEAM);
+    horse->move(5,5);
+    horse->show();
+
+    queen = std::make_unique<Queen>(this);
+    queen->move(80,5);
+    queen->show();
+
+    king = std::make_unique<King>(this);
+    king->move(155,5);
+    king->show();
 }
 
 Board::~Board()

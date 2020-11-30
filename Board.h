@@ -8,6 +8,7 @@
 #include <QtWidgets>
 
 #include "Piece.h"
+#include "King.h"
 
 #include <memory> //para utlilizar punteros inteligentes
 
@@ -29,7 +30,9 @@ private:
     Ui::Board *ui;
     QPixmap boardImage;
 
-    std::unique_ptr<Piece> piece;
+    std::unique_ptr<Piece> horse;
+    std::unique_ptr<Piece> queen;
+    std::unique_ptr<Piece> king;
 
 };
 

@@ -35,7 +35,19 @@ if(ANDROID)
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
-    ${files}
+    Board.h
+    Board.cpp
+    Board.ui
+    Point.h
+    Point.cpp
+    Piece.h
+    Piece.cpp
+    Knight.h
+    Knight.cpp
+    Queen.h
+    Queen.cpp
+    King.h
+    King.cpp
   )
 else()
   add_executable(ChessGame
@@ -44,7 +56,19 @@ else()
     mainwindow.h
     mainwindow.ui
     resource.qrc
-    ${files}
+    Board.h
+    Board.cpp
+    Board.ui
+    Point.h
+    Point.cpp
+    Piece.h
+    Piece.cpp
+    Knight.h
+    Knight.cpp
+    Queen.h
+    Queen.cpp
+    King.h
+    King.cpp
   )
 endif()
 
