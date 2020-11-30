@@ -2,6 +2,9 @@
 #include "ui_Board.h"
 #include "Knight.h"
 #include "Queen.h"
+#include "Rook.h"
+#include "Bishop.h"
+#include "Pawn.h"
 
 Board::Board(QWidget *parent) :
     QWidget(parent),
@@ -21,6 +24,18 @@ Board::Board(QWidget *parent) :
     king = std::make_unique<King>(this);
     king->move(155,5);
     king->show();
+
+    rook = std::make_unique<Rook>(this);
+    rook->move(230,5);
+    king->show();
+
+    bishop = std::make_unique<Bishop>(this);
+    bishop->move(305,5);
+    bishop->show();
+
+    pawn = std::make_unique<Pawn>(this);
+    pawn->move(380,5);
+    pawn->show();
 }
 
 Board::~Board()

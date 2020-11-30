@@ -48,6 +48,12 @@ if(ANDROID)
     Queen.cpp
     King.h
     King.cpp
+    Rook.h
+    Rook.cpp
+    Bishop.h
+    Bishop.cpp
+    Pawn.h
+    Pawn.cpp
   )
 else()
   add_executable(ChessGame
@@ -69,6 +75,12 @@ else()
     Queen.cpp
     King.h
     King.cpp
+    Rook.h
+    Rook.cpp
+    Bishop.h
+    Bishop.cpp
+    Pawn.h
+    Pawn.cpp
   )
 endif()
 

@@ -3,15 +3,12 @@
 
 #include "Piece.h"
 
-namespace Ui {
-    class Pawn;
-}
-
 class Pawn : public Piece
 {
     Q_OBJECT
 public:
-    explicit Pawn(QWidget *parent = nullptr, QString teamValue);
+    explicit Pawn(QWidget *parent = nullptr, QString teamValue = Piece::WHITE_TEAM);
+    QVector<Point> & getMoves(const Point &currentPosition) override;
 };
 
 #endif // PAWN_H

@@ -33,6 +33,9 @@ private:
     std::unique_ptr<Piece> horse;
     std::unique_ptr<Piece> queen;
     std::unique_ptr<Piece> king;
+    std::unique_ptr<Piece> bishop;
+    std::unique_ptr<Piece> rook;
+    std::unique_ptr<Piece> pawn;
 
 };
 
