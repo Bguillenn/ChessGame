@@ -7,3 +7,8 @@ Piece::Piece(QWidget *parent, QString teamValue) : QLabel(parent), team{teamValu
 {
 
 }
+
+QString Piece::getTeam() const
+{
+    return this->team;
+}

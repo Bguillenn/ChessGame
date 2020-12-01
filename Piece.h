@@ -18,6 +18,7 @@ public:
     static const QString BLACK_TEAM;
     static const QString WHITE_TEAM;
     virtual QVector<Point>& getMoves(const Point& currentPosition) = 0;
+    QString getTeam() const;
 protected:
     Ui::Piece *ui;
     QString team{};
