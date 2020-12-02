@@ -8,7 +8,3 @@ Queen::Queen(QWidget *parent, QString teamValue):
     this->setPixmap(this->icon.scaled(QSize(65,65), Qt::KeepAspectRatio));
 }
 
-QVector<Point>& Queen::getMoves(const Point& currentPosition)
-{
-
-}

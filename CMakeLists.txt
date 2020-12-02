@@ -38,8 +38,6 @@ if(ANDROID)
     Board.h
     Board.cpp
     Board.ui
-    Point.h
-    Point.cpp
     Piece.h
     Piece.cpp
     Knight.h
@@ -65,8 +63,6 @@ else()
     Board.h
     Board.cpp
     Board.ui
-    Point.h
-    Point.cpp
     Piece.h
     Piece.cpp
     Knight.h

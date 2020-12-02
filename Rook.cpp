@@ -7,8 +7,3 @@ Rook::Rook(QWidget *parent, QString teamValue):
     this->icon.load(this->imgPath);
     this->setPixmap(this->icon.scaled(QSize(65,65), Qt::KeepAspectRatio));
 }
-
-QVector<Point>& Rook::getMoves(const Point& currentPosition)
-{
-
-}

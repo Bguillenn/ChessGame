@@ -9,11 +9,15 @@
 
 #include "Piece.h"
 #include "Pawn.h"
+#include <QtWidgets>
+
 #include "Rook.h"
 #include "Bishop.h"
 #include "Knight.h"
 #include "Queen.h"
 #include "King.h"
+
+
 
 #include <memory> //para utlilizar punteros inteligentes
 
@@ -42,6 +46,12 @@ private:
 
     void loadPiecesOnBoard();
     Piece& createPiece(char value);
+
+    //Drag and drop functions
+    void mousePressEvent(QMouseEvent *event) override;
+    void dragMoveEvent(QDragMoveEvent *event) override;
+    void dragEnterEvent(QDragEnterEvent *event) override;
+    void dropEvent(QDropEvent *event) override;
 };
 
 #endif // BOARD_H

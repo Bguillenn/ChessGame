@@ -8,7 +8,3 @@ Bishop::Bishop(QWidget *parent, QString teamValue):
     this->setPixmap(this->icon.scaled(QSize(65,65), Qt::KeepAspectRatio));
 }
 
-QVector<Point>& Bishop::getMoves(const Point& currentPosition)
-{
-
-}

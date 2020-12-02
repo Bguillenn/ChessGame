@@ -1,5 +1,6 @@
 #include "Board.h"
 #include "ui_Board.h"
+#include <QDebug>
 
 const QVector<QVector<char>> Board::INITIAL_BOARD_DATA =
 {
@@ -22,6 +23,8 @@ Board::Board(QWidget *parent, const QVector<QVector<char>>& boardData) :
     boardImage.load(":/Icons/Boards/ChessBoard.jpg");
 
     loadPiecesOnBoard();
+    //Aceptamos drops
+    setAcceptDrops(true);
 }
 
 Board::~Board()
@@ -53,6 +56,7 @@ void Board::loadPiecesOnBoard()
                     this->white_pieces.push_back(aux);
 
                 aux->move(j*75+5, i*75+5);
+                aux->setCursor(Qt::PointingHandCursor);
                 aux->show();
 
             }
@@ -105,4 +109,87 @@ Piece& Board::createPiece(char value)
     return *aux;
 }
 
+
+//Drag and drop
+void Board::mousePressEvent(QMouseEvent *event)
+{
+
+    auto child = childAt(event->pos());
+    //Validamos si clickeamos en cualquier sitio
+    if(child == nullptr) return;
+    Piece *piece = (Piece*) child;
+
+    QByteArray data;
+    QDataStream dataStream( &data, QIODevice::WriteOnly);
+
+    dataStream << QPoint(piece->pos());
+
+    QMimeData *mimeData = new QMimeData();
+    mimeData->setData("application/x-dnditemdata", data);
+
+    QDrag *drag = new QDrag( this );
+    drag->setMimeData(mimeData);
+
+    drag->exec( Qt::CopyAction | Qt::MoveAction, Qt::CopyAction );
+}
+
+void Board::dragMoveEvent(QDragMoveEvent *event)
+{
+    if(event->mimeData()->hasFormat("application/x-dnditemdata")){
+        if(event->source() == this){
+            event->setDropAction( Qt::MoveAction );
+            event->accept();
+        }else
+            event->acceptProposedAction();
+
+    }else{
+        event->ignore();
+    }
+}
+
+void Board::dragEnterEvent(QDragEnterEvent *event)
+{
+    if(event->mimeData()->hasFormat("application/x-dnditemdata")){
+        if(event->source() == this){
+            event->setDropAction( Qt::MoveAction );
+            event->accept();
+
+        }else
+            event->acceptProposedAction();
+
+    }else{
+        event->ignore();
+    }
+}
+
+void Board::dropEvent(QDropEvent *event)
+{
+    if(event->mimeData()->hasFormat("application/x-dnditemdata")){
+        QByteArray data = event->mimeData()->data("application/x-dnditemdata");
+        QDataStream dataStream(&data, QIODevice::ReadOnly);
+
+        QPoint pieceCoord;
+        dataStream >> pieceCoord;
+
+        if(event->source() == this){
+            event->setDropAction(Qt::MoveAction);
+            event->accept();
+
+            Piece *piece = (Piece *)childAt(pieceCoord);
+
+            int xPos = (event->pos().x() / 75) * 75 + 5;
+            int yPos = (event->pos().y() / 75) * 75 + 5;
+
+            QPoint destinyPoint(xPos, yPos);
+
+            piece->move(destinyPoint);
+            piece->show();
+
+        }else{
+            event->acceptProposedAction();
+        }
+    }else{
+        event->ignore();
+    }
+}
 

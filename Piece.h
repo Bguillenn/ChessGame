@@ -2,7 +2,6 @@
 #define PIECE_H
 
 #include <QLabel>
-#include "Point.h"
 
 namespace Ui {
     class Piece;
@@ -17,7 +16,6 @@ public:
     virtual ~Piece(){};
     static const QString BLACK_TEAM;
     static const QString WHITE_TEAM;
-    virtual QVector<Point>& getMoves(const Point& currentPosition) = 0;
     QString getTeam() const;
 protected:
     Ui::Piece *ui;
