@@ -130,10 +130,10 @@ void Board::mousePressEvent(QMouseEvent *event)
     QDrag *drag = new QDrag( this );
 
 
-    const QPixmap *pixmap = piece->pixmap();
+    QPixmap pixmap = piece->pixmap(Qt::ReturnByValue);
 
     drag->setMimeData(mimeData);
-    drag->setPixmap(*pixmap);
+    drag->setPixmap(pixmap);
     drag->setHotSpot(event->pos() - piece->pos());
     drag->exec( Qt::CopyAction | Qt::MoveAction, Qt::CopyAction );
 }
