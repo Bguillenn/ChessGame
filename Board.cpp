@@ -128,8 +128,11 @@ void Board::mousePressEvent(QMouseEvent *event)
     mimeData->setData("application/x-dnditemdata", data);
 
     QDrag *drag = new QDrag( this );
-    drag->setMimeData(mimeData);
 
+    QPixmap pixmap = piece->pixmap(Qt::ReturnByValue);
+
+    drag->setMimeData(mimeData);
+    drag->setPixmap(pixmap);
     drag->exec( Qt::CopyAction | Qt::MoveAction, Qt::CopyAction );
 }
 
