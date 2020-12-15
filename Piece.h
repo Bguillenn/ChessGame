@@ -2,6 +2,7 @@
 #define PIECE_H
 
 #include <QLabel>
+#include "Board.h"
 
 namespace Ui {
     class Piece;
@@ -17,6 +18,7 @@ public:
     static const QString BLACK_TEAM;
     static const QString WHITE_TEAM;
     QString getTeam() const;
+    virtual bool isValidMove(QPoint& initial, QPoint& final, QVector<QVector<char>>& currentBoard) = 0;
 protected:
     Ui::Piece *ui;
     QString team{};
