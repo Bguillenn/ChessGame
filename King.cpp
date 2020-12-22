@@ -7,3 +7,11 @@ King::King(QWidget *parent, QString teamValue):
     this->icon.load(this->imgPath);
     this->setPixmap(this->icon.scaled(QSize(65,65), Qt::KeepAspectRatio));
 }
+
+bool King::isValidMove(QPoint& initial, QPoint& final, QVector<QVector<char>>& currentBoard)
+{
+
+
+
+    return true;
+}

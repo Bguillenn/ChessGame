@@ -8,3 +8,11 @@ Bishop::Bishop(QWidget *parent, QString teamValue):
     this->setPixmap(this->icon.scaled(QSize(65,65), Qt::KeepAspectRatio));
 }
 
+bool Bishop::isValidMove(QPoint& initial, QPoint& final, QVector<QVector<char>>& currentBoard)
+{
+
+
+
+    return true;
+}
+

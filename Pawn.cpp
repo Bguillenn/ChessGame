@@ -8,3 +8,11 @@ Pawn::Pawn(QWidget *parent, QString teamValue):
     this->setPixmap(this->icon.scaled(QSize(65,65), Qt::KeepAspectRatio));
 }
 
+bool Pawn::isValidMove(QPoint& initial, QPoint& final, QVector<QVector<char>>& currentBoard)
+{
+
+
+
+    return true;
+}
+

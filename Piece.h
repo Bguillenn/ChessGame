@@ -2,7 +2,6 @@
 #define PIECE_H
 
 #include <QLabel>
-#include "Board.h"
 
 namespace Ui {
     class Piece;
