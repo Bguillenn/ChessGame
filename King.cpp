@@ -1,9 +1,9 @@
-#include "Rook.h"
+#include "King.h"
 
-Rook::Rook(QWidget *parent, QString teamValue):
+King::King(QWidget *parent, QString teamValue):
     Piece(parent, teamValue)
 {
-    this->imgPath = ":/Icons/Pieces/"+this->team+"/Rook.png";
+    this->imgPath = ":/Icons/Pieces/"+this->team+"/King.png";
     this->icon.load(this->imgPath);
     this->setPixmap(this->icon.scaled(QSize(65,65), Qt::KeepAspectRatio));
 }

@@ -3,15 +3,12 @@
 
 #include "Piece.h"
 
-namespace Ui {
-    class Rook;
-}
-
 class Rook : public Piece
 {
     Q_OBJECT
 public:
-    explicit Bishop(QWidget *parent = nullptr, QString teamValue);
+    explicit Rook(QWidget *parent = nullptr, QString teamValue = Piece::WHITE_TEAM);
+    bool isValidMove(QPoint& initial, QPoint& final, QVector<QVector<char>>& currentBoard);
 };
 
 #endif // ROOK_H

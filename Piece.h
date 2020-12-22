@@ -2,7 +2,7 @@
 #define PIECE_H
 
 #include <QLabel>
-#include "Point.h"
+#include "Board.h"
 
 namespace Ui {
     class Piece;
@@ -13,12 +13,13 @@ class Piece : public QLabel
 {
     Q_OBJECT
 public:
-    explicit Piece(QWidget *parent = nullptr);
+    explicit Piece(QWidget *parent = nullptr, QString teamValue = Piece::WHITE_TEAM);
     virtual ~Piece(){};
     static const QString BLACK_TEAM;
     static const QString WHITE_TEAM;
-    virtual QVector<Point> getMoves(Point& currentPosition) = 0;
-private:
+    QString getTeam() const;
+    virtual bool isValidMove(QPoint& initial, QPoint& final, QVector<QVector<char>>& currentBoard) = 0;
+protected:
     Ui::Piece *ui;
     QString team{};
     bool life{true};
