@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/resources"/>
+    <qresource prefix="/">
+        <file>Icons/Boards/ChessBoard.jpg</file>
+        <file>Icons/Boards/tablero-marron-notacion.png</file>
+        <file>Icons/Boards/tablero-marron.png</file>
+        <file>Icons/Boards/tablero-negro-notacion.png</file>
+        <file>Icons/Boards/tablero-negro.png</file>
+        <file>Icons/Boards/tablero-verde-notacion.png</file>
+        <file>Icons/Boards/tablero-verde.png</file>
+        <file>Icons/Pieces/black_pieces/alfil-negro.png</file>
+        <file>Icons/Pieces/black_pieces/caballo-negro.png</file>
+        <file>Icons/Pieces/black_pieces/peon-negro.png</file>
+        <file>Icons/Pieces/black_pieces/reina-negra.png</file>
+        <file>Icons/Pieces/black_pieces/rey-negro.png</file>
+        <file>Icons/Pieces/black_pieces/torre-negra.png</file>
+        <file>Icons/Pieces/white_pieces/alfil-blanco.png</file>
+        <file>Icons/Pieces/white_pieces/caballo-blanco.png</file>
+        <file>Icons/Pieces/white_pieces/ChessBoard.jpg</file>
+        <file>Icons/Pieces/white_pieces/peon-blanco.png</file>
+        <file>Icons/Pieces/white_pieces/reina-blanca.png</file>
+        <file>Icons/Pieces/white_pieces/rey-blanco.png</file>
+        <file>Icons/Pieces/white_pieces/torre-blanca.png</file>
+    </qresource>
+</RCC>

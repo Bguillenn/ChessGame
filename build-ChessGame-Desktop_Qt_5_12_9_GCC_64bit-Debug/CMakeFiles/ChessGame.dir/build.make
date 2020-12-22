@@ -61,6 +61,7 @@ ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp: /home/denis/Workspace/ChessGame/C
 ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp: CMakeFiles/ChessGame_autogen.dir/AutoRcc_Resource_EWIEGA46WW_Info.json
 ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp: /home/denis/Workspace/ChessGame/ChessGame/Icons/torre-blanca.png
 ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp: /home/denis/Workspace/ChessGame/ChessGame/Icons/tablero-marron-notacion.png
+ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp: /home/denis/Workspace/ChessGame/ChessGame/Icons/ChessBoard.jpg
 ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp: /home/denis/Workspace/ChessGame/ChessGame/Icons/caballo-blanco.png
 ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp: /home/denis/Workspace/ChessGame/ChessGame/Icons/peon-blanco.png
 ChessGame_autogen/EWIEGA46WW/qrc_Resource.cpp: /home/denis/Workspace/ChessGame/ChessGame/Icons/tablero-negro-notacion.png
