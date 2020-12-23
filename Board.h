@@ -16,6 +16,7 @@
 #include "King.h"
 
 #include "BoardData.h"
+#include "GameController.h"
 
 
 #include <memory> //para utlilizar punteros inteligentes
@@ -40,6 +41,8 @@ private:
 
     QVector<Piece*> black_pieces{};
     QVector<Piece*> white_pieces{};
+
+    GameController* gameController;
 
     //METODOS
     void loadPiecesOnBoard();

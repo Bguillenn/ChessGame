@@ -20,5 +20,8 @@
         <file>Icons/Pieces/white_pieces/Pawn.png</file>
         <file>Icons/Pieces/white_pieces/Queen.png</file>
         <file>Icons/Pieces/white_pieces/Rook.png</file>
+        <file>Icons/Boards/x-axis.png</file>
+        <file>Icons/Boards/y-axis.png</file>
+        <file>Icons/otro/logo.png</file>
     </qresource>
 </RCC>

@@ -6,25 +6,251 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>600</height>
+    <width>928</width>
+    <height>687</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Chess Game</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="Board" name="widget" native="true">
+   <widget class="Board" name="BoardImage" native="true">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>60</x>
+      <y>60</y>
       <width>600</width>
       <height>600</height>
      </rect>
     </property>
    </widget>
+   <widget class="QLabel" name="imgYbar">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>47</width>
+      <height>600</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ImgYBar</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="imgXbar">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>10</y>
+      <width>600</width>
+      <height>47</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ImgXBar</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gameData" native="true">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>60</y>
+      <width>250</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>231</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>TURNO</string>
+     </property>
+     <widget class="QLabel" name="lblTurno">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">text-align: center;
+font-size: 20px;
+color: #000;
+font-weight: bold;</string>
+      </property>
+      <property name="text">
+       <string>TEAM_TURNO</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Contador de jugadas</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblJugadas">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>120</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 32px;
+color: #000;
+font-weight: bold;
+text-align: center;</string>
+     </property>
+     <property name="text">
+      <string>15</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="lstBlancasCapturadas">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>231</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Piezas blancas capturadas</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tblHistorial">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>290</y>
+       <width>231</width>
+       <height>192</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>Origen</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Destino</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Equipo</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Tipo</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Historial de jugadas</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="lstNegrasCapturadas">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>490</y>
+       <width>231</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Piezas negras capturadas</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="GameTitleLbl">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>10</y>
+      <width>250</width>
+      <height>47</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CHESSGAME</string>
+    </property>
+   </widget>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>928</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuJuego">
+    <property name="title">
+     <string>Juego</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionReiniciar"/>
+   </widget>
+   <widget class="QMenu" name="menuAyuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuCreadores">
+    <property name="title">
+     <string>Creadores</string>
+    </property>
+   </widget>
+   <addaction name="menuJuego"/>
+   <addaction name="menuAyuda"/>
+   <addaction name="menuCreadores"/>
+  </widget>
+  <action name="actionReiniciar">
+   <property name="text">
+    <string>Reiniciar</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>

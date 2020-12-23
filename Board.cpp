@@ -22,6 +22,9 @@ Board::Board(QWidget *parent, BoardData boardD) :
     ui(new Ui::Board),
     boardData{boardD}
 {
+
+    gameController = GameController::getInstance();
+
     ui->setupUi(this);
     boardImage.load(":/Icons/Boards/ChessBoard.jpg");
 
@@ -120,7 +123,13 @@ void Board::mousePressEvent(QMouseEvent *event)
     auto child = childAt(event->pos());
     //Validamos si clickeamos en cualquier sitio
     if(child == nullptr) return;
+    //Validamos que sea el turno del personaje con el controlador de juego
     Piece *piece = (Piece*) child;
+    if(piece->getTeam() != gameController->getTurn())
+    {
+        //No es turno mostrar mensaje
+        return;
+    }
 
     QByteArray data;
     QDataStream dataStream( &data, QIODevice::WriteOnly);
@@ -144,6 +153,26 @@ void Board::mousePressEvent(QMouseEvent *event)
 void Board::dragMoveEvent(QDragMoveEvent *event)
 {
     if(event->mimeData()->hasFormat("application/x-dnditemdata")){
+        //PARA IR MOSTRANDO SI EL MOVIMIENTO ES VALIDO O NO
+        /*QByteArray data = event->mimeData()->data("application/x-dnditemdata");
+        QDataStream dataStream(&data, QIODevice::ReadOnly);
+
+        QPoint pieceCoord;
+        dataStream >> pieceCoord;
+
+        int xini = pieceCoord.x() / 75;
+        int yini = pieceCoord.y() / 75;
+        int xfin = event->pos().x() / 75;
+        int yfin = event->pos().y() / 75;
+
+        QPoint initial(xini, yini);
+        QPoint final(xfin,yfin);
+
+        Piece *piece = (Piece *)childAt(pieceCoord);
+
+        qDebug() << "Valido movimiento? " << piece->isValidMove(initial, final, boardData); */
+
+
         if(event->source() == this){
             event->setDropAction( Qt::MoveAction );
             event->accept();
@@ -200,12 +229,48 @@ void Board::dropEvent(QDropEvent *event)
                 event->accept();
                 QPoint destinyPoint(xPos, yPos);
 
+
+                bool jaque = false;
+                int type = GameController::NORMAL_MOVEMENT;
+                //Si esque el casillero no esta vacio es que hay una pieza enemiga
+                if(boardData[xfin][yfin] != VACIO){
+                    type = GameController::KILL_MOVEMENT;
+                    //JAQUE MATE
+                    if( (boardData[xfin][yfin] == REYN) || (boardData[xfin][yfin] == REYB) ){
+                        type = GameController::JAQUE_MOVEMENT;
+                        //JAQUE MATE REALIZADO
+                        qDebug() << "JAQUE MATE!!";
+                        jaque = true;
+                    }
+                    //END JAQUE MATE
+
+
+                    Piece *pieceE = (Piece *)childAt(event->pos());
+
+                    gameController->addToCementery(boardData[xfin][yfin] , pieceE->getTeam());
+                    //pieceE->hide();
+                    delete pieceE;
+                }
+
+                //PROMOTION
+                if( ((boardData[xini][yini] == PEONB) || (boardData[xini][yini] == PEONN)) && !jaque ){
+                    int extreme = (boardData[xini][yini] == PEONB) ? 0:7;
+                    if(yfin == extreme)
+                    {
+                        type = GameController::PROMOTION_MOVEMENT;
+                        qDebug() << "PROMOTION mostrando opciones!!";
+                       //HACER PROMOTION
+                    }
+                }
+                //END PROMOTION
+
+                updateBoardData(initial, final);
+
+                gameController->makeMove(initial, final, piece->getTeam(), type);
                 piece->move(destinyPoint);
                 piece->show();
 
 
-                //TODO: Validar kills tambien kill del rey
-                updateBoardData(initial, final);
 
             }else{
                 event->acceptProposedAction();

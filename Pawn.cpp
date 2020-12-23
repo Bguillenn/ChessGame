@@ -17,9 +17,6 @@ bool Pawn::isValidMove(QPoint& initial, QPoint& final, const BoardData& board)
 
     bool isPosible = false;
 
-    qDebug() << " >> Validando ";
-    qDebug() << "difx = "<<difX;
-    qDebug() << "dify = "<<difY;
 
     //Validamos que se este moviendo verticalmente
     if(difX == 0)
@@ -49,9 +46,9 @@ bool Pawn::isValidMove(QPoint& initial, QPoint& final, const BoardData& board)
             }
         }
     } else if((abs(difX) == 1) //Si esta intentando matar al enemigo
-              && (difY == (board.isWhitePiece(initial.x(), initial.y()) ? -1:1))
+              && (difY == ( board.isWhitePiece(initial.x(), initial.y() ) ) ? -1:1)
               && !board.isBlank(final.x(), final.y())
-              && (board[initial.y()][initial.x()] != board[final.y()][final.x()]))
+              && ( board.isWhitePiece(initial.x(), initial.y()) != board.isWhitePiece(final.x(), final.y()) ) )
     {
         isPosible = true;
     }

@@ -56,6 +56,10 @@ if(ANDROID)
     Pawn.cpp
     BoardData.cpp
     BoardData.h
+    GameController.cpp
+    GameController.h
+    Move.h
+    Move.cpp
   )
 else()
   add_executable(ChessGame
@@ -83,6 +87,10 @@ else()
     Pawn.cpp
     BoardData.cpp
     BoardData.h
+    GameController.cpp
+    GameController.h
+    Move.h
+    Move.cpp
   )
 endif()
 
