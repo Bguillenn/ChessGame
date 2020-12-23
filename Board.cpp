@@ -120,6 +120,9 @@ Piece& Board::createPiece(int value)
 void Board::mousePressEvent(QMouseEvent *event)
 {
 
+    //Si es el fin del juego entonces no permite movimientos
+    if(gameController->isEnd()) return;
+
     auto child = childAt(event->pos());
     //Validamos si clickeamos en cualquier sitio
     if(child == nullptr) return;
@@ -130,6 +133,7 @@ void Board::mousePressEvent(QMouseEvent *event)
         //No es turno mostrar mensaje
         return;
     }
+
 
     QByteArray data;
     QDataStream dataStream( &data, QIODevice::WriteOnly);
@@ -260,6 +264,9 @@ void Board::dropEvent(QDropEvent *event)
                         type = GameController::PROMOTION_MOVEMENT;
                         qDebug() << "PROMOTION mostrando opciones!!";
                        //HACER PROMOTION
+                        QString team = piece->getTeam();
+                        delete piece;
+                        piece = mostrarMenuPromotion(piece->getTeam());
                     }
                 }
                 //END PROMOTION
@@ -296,5 +303,32 @@ void Board::updateBoardData(QPoint initial, QPoint final)
         }
         qDebug() << row;
     }
+}
+
+Piece* Board::mostrarMenuPromotion(QString team)
+{
+    QMessageBox msgBox(QMessageBox::Information, "PROMOTION", "Elige una de las siguientes opciones para promover a tu peon");
+    QPushButton* caballoBtn = msgBox.addButton(tr("Caballo"), QMessageBox::ActionRole);
+    QPushButton* alfilBtn = msgBox.addButton(tr("Alfil"), QMessageBox::ActionRole);
+    QPushButton* reynaBtn = msgBox.addButton(tr("Reyna"), QMessageBox::ActionRole);
+    QPushButton* torreBtn = msgBox.addButton(tr("Torre"), QMessageBox::ActionRole);
+
+    msgBox.exec();
+
+    Piece* newPiece;
+
+    if(msgBox.clickedButton() == caballoBtn)
+        newPiece = new Knight(this, team);
+    if(msgBox.clickedButton() == alfilBtn)
+        newPiece = new Bishop(this, team);
+    if(msgBox.clickedButton() == reynaBtn)
+        newPiece = new Queen(this, team);
+    if(msgBox.clickedButton() == torreBtn)
+        newPiece = new Rook(this, team);
+
+
+
+    newPiece->setCursor(Qt::PointingHandCursor);
+    return newPiece;
 }
 

@@ -40,6 +40,11 @@ void GameController::makeMove(QPoint ini, QPoint fin,QString team ,int type){
     switchTurn();
     moves++;
 
+    if(type == JAQUE_MOVEMENT){
+        winner = team;
+        end = true;
+    }
+
     emit updateGameData();
 }
 
@@ -68,4 +73,12 @@ QVector<int> GameController::getWhitesCaptured()
 QVector<int> GameController::getBlacksCaptured()
 {
     return blacksCap;
+}
+
+bool GameController::isEnd() const{
+    return end;
+}
+
+QString GameController::getWinner() const{
+    return winner;
 }

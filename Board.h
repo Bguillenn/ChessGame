@@ -48,6 +48,7 @@ private:
     void loadPiecesOnBoard();
     Piece& createPiece(int value);
     void updateBoardData(QPoint initial, QPoint final);
+    Piece* mostrarMenuPromotion(QString team);
 
 
 

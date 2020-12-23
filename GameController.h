@@ -15,6 +15,8 @@ private:
     QVector<int> whitesCap{};
     QVector<int> blacksCap{};
     int moves{0};
+    bool end{false};
+    QString winner{"NONE"};
 
     // PRIVATE METHODS
 
@@ -44,6 +46,9 @@ public:
     QVector<Move> getRecord();
     QVector<int> getWhitesCaptured();
     QVector<int> getBlacksCaptured();
+    bool isEnd() const;
+    QString getWinner() const;
+
 
     void addToCementery(int pieceType, QString team);
 

@@ -200,11 +200,27 @@ const int GameController::JAQUE_MOVEMENT = 4;
 
 void MainWindow::updateGameData()
 {
-    updateJugadasLabel();
-    updateTurnoLabel();
-    updateHistorialTable();
-    updateBlancasCapturadas();
-    updateNegrasCapturadas();
+    if(!gameController->isEnd()){
+        updateJugadasLabel();
+        updateTurnoLabel();
+        updateHistorialTable();
+        updateBlancasCapturadas();
+        updateNegrasCapturadas();
+    }else{
+        QMessageBox msg(QMessageBox::Information, "!JAQUE MATE¡", "El ganador de esta partida es: "+gameController->getWinner() );
+
+        QPushButton* reiniciar = msg.addButton(tr("Reiniciar"), QMessageBox::ActionRole);
+        QPushButton* salir = msg.addButton(tr("Salir"), QMessageBox::ActionRole);
+
+        msg.exec();
+
+        if(msg.clickedButton() == reiniciar){
+
+        } else if( msg.clickedButton() == salir){
+            QCoreApplication::quit();
+        }
+
+    }
 }
 
 void MainWindow::handleUpdateGameData()
