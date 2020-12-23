@@ -36,21 +36,21 @@ QString Move::asignLetterAndNumber(QPoint n)
     }
 
     switch (n.y()) {
-        case 0: position += QString::number(1);
+        case 0: position += QString::number(8);
         break;
-         case 1: position += QString::number(2);
+         case 1: position += QString::number(7);
         break;
-        case 2: position += QString::number(3);
+        case 2: position += QString::number(6);
         break;
-        case 3: position += QString::number(4);
+        case 3: position += QString::number(5);
         break;
-        case 4: position += QString::number(5);
+        case 4: position += QString::number(4);
         break;
-        case 5: position += QString::number(6);
+        case 5: position += QString::number(3);
         break;
-        case 6: position += QString::number(7);
+        case 6: position += QString::number(2);
         break;
-        case 7: position += QString::number(8);
+        case 7: position += QString::number(1);
         break;
     }
 
