@@ -22,6 +22,7 @@ class MainWindow : public QMainWindow
     void updateNegrasCapturadas();
     void updateBlancasCapturadas();
     void updateHistorialTable();
+    QPixmap* getPiecePixMap(int);
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();

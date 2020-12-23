@@ -132,19 +132,6 @@ text-align: center;</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QGroupBox" name="lstBlancasCapturadas">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>160</y>
-       <width>231</width>
-       <height>101</height>
-      </rect>
-     </property>
-     <property name="title">
-      <string>Piezas blancas capturadas</string>
-     </property>
-    </widget>
     <widget class="QTableWidget" name="tblHistorial">
      <property name="geometry">
       <rect>
@@ -153,6 +140,9 @@ text-align: center;</string>
        <width>231</width>
        <height>192</height>
       </rect>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
      </property>
      <column>
       <property name="text">
@@ -188,17 +178,50 @@ text-align: center;</string>
       <string>Historial de jugadas</string>
      </property>
     </widget>
-    <widget class="QGroupBox" name="lstNegrasCapturadas">
+    <widget class="QListWidget" name="blancasCap">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>180</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Blancas capturadas</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="negrasCap">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>510</y>
+       <width>231</width>
+       <height>91</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>490</y>
-       <width>231</width>
-       <height>101</height>
+       <width>101</width>
+       <height>16</height>
       </rect>
      </property>
-     <property name="title">
-      <string>Piezas negras capturadas</string>
+     <property name="text">
+      <string>Negras capturadas</string>
      </property>
     </widget>
    </widget>
