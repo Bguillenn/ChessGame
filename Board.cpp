@@ -332,3 +332,18 @@ Piece* Board::mostrarMenuPromotion(QString team)
     return newPiece;
 }
 
+void Board::resetBoard(){
+    Piece* aux;
+
+    for(int i=0; i < 8; i++){
+        for(int j=0; j < 8 ; j++){
+            aux = (Piece *) childAt(QPoint(i*75+6,j*75+6));
+            qDebug() << "Borrando pieza "<<aux;
+            if(aux != nullptr) delete aux;
+        }
+    }
+
+    boardData = BoardData::getInitialBoardData();
+    loadPiecesOnBoard();
+}
+

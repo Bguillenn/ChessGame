@@ -41,7 +41,7 @@ void GameController::makeMove(QPoint ini, QPoint fin,QString team ,int type){
     moves++;
 
     if(type == JAQUE_MOVEMENT){
-        winner = team;
+        winner = (team == Piece::WHITE_TEAM) ? "BLANCAS": "NEGRAS";
         end = true;
     }
 
@@ -81,4 +81,16 @@ bool GameController::isEnd() const{
 
 QString GameController::getWinner() const{
     return winner;
+}
+
+void GameController::reset() {
+    turn = Piece::WHITE_TEAM;
+    record = {};
+    whitesCap = {};
+    blacksCap = {};
+    moves = 0;
+    end = false;
+    winner = "NONE";
+
+    emit updateGameData();
 }

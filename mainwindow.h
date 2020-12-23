@@ -34,5 +34,6 @@ private:
 signals:
 public slots:
     void handleUpdateGameData();
+    void handleReiniciar();
 };
 #endif // MAINWINDOW_H

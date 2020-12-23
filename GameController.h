@@ -48,6 +48,7 @@ public:
     QVector<int> getBlacksCaptured();
     bool isEnd() const;
     QString getWinner() const;
+    void reset();
 
 
     void addToCementery(int pieceType, QString team);

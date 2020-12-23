@@ -26,6 +26,8 @@ MainWindow::MainWindow(QWidget *parent)
     gameController = GameController::getInstance();
 
 
+    QObject::connect(ui->actionReiniciar, &QAction::triggered, this, &MainWindow::handleReiniciar);
+
     initLabels();
 }
 
@@ -215,7 +217,7 @@ void MainWindow::updateGameData()
         msg.exec();
 
         if(msg.clickedButton() == reiniciar){
-
+            ui->BoardImage->resetBoard();
         } else if( msg.clickedButton() == salir){
             QCoreApplication::quit();
         }
@@ -226,4 +228,10 @@ void MainWindow::updateGameData()
 void MainWindow::handleUpdateGameData()
 {
     updateGameData();
+}
+
+void MainWindow::handleReiniciar()
+{
+    gameController->reset();
+    ui->BoardImage->resetBoard();
 }

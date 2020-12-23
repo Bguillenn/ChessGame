@@ -16,7 +16,7 @@ Move::Move(QPoint ori, QPoint des, QString team, int type)
 QString Move::asignLetterAndNumber(QPoint n)
 {
     QString position = "";
-    switch (n.y()) {
+    switch (n.x()) {
         case 0: position+="A";
         break;
         case 1: position+="B";
@@ -35,7 +35,7 @@ QString Move::asignLetterAndNumber(QPoint n)
         break;
     }
 
-    switch (n.x()) {
+    switch (n.y()) {
         case 0: position += QString::number(1);
         break;
          case 1: position += QString::number(2);

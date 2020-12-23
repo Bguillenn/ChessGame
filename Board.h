@@ -34,6 +34,7 @@ public:
     ~Board();
 
     void paintEvent(QPaintEvent *event) override;
+    void resetBoard();
 private:
     Ui::Board *ui;
     QPixmap boardImage{};
