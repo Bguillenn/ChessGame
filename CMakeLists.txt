@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.5)
 
 project(ChessGame LANGUAGES CXX)
 
+set (CMAKE_PREFIX_PATH "C:\\Qt\\5.15.2\\mingw81_64\\")
+
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(CMAKE_AUTOUIC ON)
@@ -52,6 +54,8 @@ if(ANDROID)
     Bishop.cpp
     Pawn.h
     Pawn.cpp
+    BoardData.cpp
+    BoardData.h
   )
 else()
   add_executable(ChessGame
@@ -77,6 +81,8 @@ else()
     Bishop.cpp
     Pawn.h
     Pawn.cpp
+    BoardData.cpp
+    BoardData.h
   )
 endif()
 

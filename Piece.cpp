@@ -1,4 +1,5 @@
 #include "Piece.h"
+#include "Board.h"
 
 const QString Piece::BLACK_TEAM = "black_pieces";
 const QString Piece::WHITE_TEAM = "white_pieces";

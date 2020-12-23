@@ -2,22 +2,25 @@
 #include "ui_Board.h"
 #include <QDebug>
 
-const QVector<QVector<char>> Board::INITIAL_BOARD_DATA =
-{
-    {'R','H','B','Q','K','B','H','R'},
-    {'P','P','P','P','P','P','P','P'},
-    {'x','x','x','x','x','x','x','x'},
-    {'x','x','x','x','x','x','x','x'},
-    {'x','x','x','x','x','x','x','x'},
-    {'x','x','x','x','x','x','x','x'},
-    {'p','p','p','p','p','p','p','p'},
-    {'r','h','b','k','q','b','h','r'}
-};
+#define VACIO -1
+#define PEONB 11
+#define PEONN 10
+#define ALFILB 7
+#define ALFILN 6
+#define CABALLOB 9
+#define CABALLON 8
+#define REYB 1
+#define REYN 0
+#define REINAB 3
+#define REINAN 2
+#define TORREB 5
+#define TORREN 4
 
-Board::Board(QWidget *parent, const QVector<QVector<char>>& boardData) :
+
+Board::Board(QWidget *parent, BoardData boardD) :
     QWidget(parent),
     ui(new Ui::Board),
-    BoardData{boardData}
+    boardData{boardD}
 {
     ui->setupUi(this);
     boardImage.load(":/Icons/Boards/ChessBoard.jpg");
@@ -41,13 +44,13 @@ void Board::paintEvent(QPaintEvent *)
 
 void Board::loadPiecesOnBoard()
 {
-    char dat;
+    int dat;
     Piece *aux;
-    for(int i = 0; i < BoardData.size(); i++)
-        for(int j = 0; j < BoardData[i].size(); j++){
-            dat = BoardData[i][j];
+    for(int i = 0; i < 8; i++)
+        for(int j = 0; j < 8; j++){
+            dat = boardData[i][j];
             //Validamos que no sea un casillero vacio para no pintarlo
-            if(dat != 'x'){
+            if(dat != VACIO){
                 //Validamos de que equipo es la ficha para añadirlo al vector de su team
                 aux = &createPiece(dat);
                 if(aux->getTeam() == Piece::BLACK_TEAM)
@@ -55,53 +58,53 @@ void Board::loadPiecesOnBoard()
                 else
                     this->white_pieces.push_back(aux);
 
-                aux->move(j*75+5, i*75+5);
+                //aux->move(j*75+5, i*75+5);
+                aux->move(i*75+5, j*75+5);
                 aux->setCursor(Qt::PointingHandCursor);
                 aux->show();
 
             }
         }
-
 }
 
-Piece& Board::createPiece(char value)
+Piece& Board::createPiece(int value)
 {
     Piece *aux;
     switch(value){
-    case 'R':
+    case TORREN:
         aux = new Rook(this, Piece::BLACK_TEAM);
         break;
-    case 'H':
+    case CABALLON:
         aux = new Knight(this, Piece::BLACK_TEAM);
         break;
-    case 'B':
+    case ALFILN:
         aux = new Bishop(this, Piece::BLACK_TEAM);
         break;
-    case 'Q':
+    case REINAN:
         aux = new Queen(this, Piece::BLACK_TEAM);
         break;
-    case 'K':
+    case REYN:
         aux = new King(this, Piece::BLACK_TEAM);
         break;
-    case 'P':
+    case PEONN:
         aux = new Pawn(this, Piece::BLACK_TEAM);
         break;
-    case 'r':
+    case TORREB:
         aux = new Rook(this, Piece::WHITE_TEAM);
         break;
-    case 'h':
+    case CABALLOB:
         aux = new Knight(this, Piece::WHITE_TEAM);
         break;
-    case 'b':
+    case ALFILB:
         aux = new Bishop(this, Piece::WHITE_TEAM);
         break;
-    case 'q':
+    case REINAB:
         aux = new Queen(this, Piece::WHITE_TEAM);
         break;
-    case 'k':
+    case REYB:
         aux = new King(this, Piece::WHITE_TEAM);
         break;
-    case 'p':
+    case PEONB:
         aux = new Pawn(this, Piece::WHITE_TEAM);
         break;
     }
@@ -177,24 +180,56 @@ void Board::dropEvent(QDropEvent *event)
         dataStream >> pieceCoord;
 
         if(event->source() == this){
-            event->setDropAction(Qt::MoveAction);
-            event->accept();
+
 
             Piece *piece = (Piece *)childAt(pieceCoord);
 
             int xPos = (event->pos().x() / 75) * 75 + 5;
             int yPos = (event->pos().y() / 75) * 75 + 5;
 
-            QPoint destinyPoint(xPos, yPos);
+            int xini = pieceCoord.x() / 75;
+            int yini = pieceCoord.y() / 75;
+            int xfin = event->pos().x() / 75;
+            int yfin = event->pos().y() / 75;
 
-            piece->move(destinyPoint);
-            piece->show();
+            QPoint initial(xini, yini);
+            QPoint final(xfin,yfin);
 
+            if(piece->isValidMove(initial, final , boardData)){
+                event->setDropAction(Qt::MoveAction);
+                event->accept();
+                QPoint destinyPoint(xPos, yPos);
+
+                piece->move(destinyPoint);
+                piece->show();
+
+
+                //TODO: Validar kills tambien kill del rey
+                updateBoardData(initial, final);
+
+            }else{
+                event->acceptProposedAction();
+            }
         }else{
             event->acceptProposedAction();
         }
     }else{
         event->ignore();
+    }
+}
+
+void Board::updateBoardData(QPoint initial, QPoint final)
+{
+    boardData.set(final.x(), final.y(), boardData[initial.x()][initial.y()]);
+    boardData.set(initial.x(), initial.y(), VACIO);
+
+    qDebug() << "Mostrando boardData ";
+    for(int i=0; i < 8; i++){
+        QString row {};
+        for(int j = 0; j < 8; j++){
+            row += ", " + QString::number(boardData[i][j]);
+        }
+        qDebug() << row;
     }
 }
 

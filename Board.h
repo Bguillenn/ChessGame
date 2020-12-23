@@ -9,14 +9,13 @@
 
 #include "Piece.h"
 #include "Pawn.h"
-#include <QtWidgets>
-
 #include "Rook.h"
 #include "Bishop.h"
 #include "Knight.h"
 #include "Queen.h"
 #include "King.h"
 
+#include "BoardData.h"
 
 
 #include <memory> //para utlilizar punteros inteligentes
@@ -30,22 +29,24 @@ class Board : public QWidget
     Q_OBJECT
 
 public:
-    explicit Board(QWidget *parent = nullptr, const QVector<QVector<char>>& boardData = Board::INITIAL_BOARD_DATA);
+    explicit Board(QWidget *parent = nullptr,const BoardData boardD = BoardData::getInitialBoardData());
     ~Board();
 
     void paintEvent(QPaintEvent *event) override;
-
 private:
     Ui::Board *ui;
     QPixmap boardImage{};
-    const static QVector<QVector<char>> INITIAL_BOARD_DATA;
-    QVector<QVector<char>> BoardData;
+    BoardData boardData;
 
     QVector<Piece*> black_pieces{};
     QVector<Piece*> white_pieces{};
 
+    //METODOS
     void loadPiecesOnBoard();
-    Piece& createPiece(char value);
+    Piece& createPiece(int value);
+    void updateBoardData(QPoint initial, QPoint final);
+
+
 
     //Drag and drop functions
     void mousePressEvent(QMouseEvent *event) override;

@@ -8,11 +8,24 @@ Bishop::Bishop(QWidget *parent, QString teamValue):
     this->setPixmap(this->icon.scaled(QSize(65,65), Qt::KeepAspectRatio));
 }
 
-bool Bishop::isValidMove(QPoint& initial, QPoint& final, QVector<QVector<char>>& currentBoard)
+bool Bishop::isValidMove(QPoint& initial, QPoint& final, const BoardData& board)
 {
+    int difX = final.x() - initial.x();
+    int difY = final.y() - initial.y();
 
+    if(abs(difX) == abs(difY))
+    {
+        if(board.isFreeWay(initial, final))
+        {
+            if(board.isBlank(final.x(), final.y())){
+                return true;
+            }else{
+                if(board.isWhitePiece(initial.x(), initial.y()) != board.isWhitePiece(final.x(), final.y()) )
+                    return true;
+            }
+        }
+    }
 
-
-    return true;
+    return false;
 }
 
